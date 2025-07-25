@@ -41,6 +41,7 @@ struct LayoutCommand: Command {
                         return true // Nothing to do
                     case .workspace(let workspace):
                         window.lastFloatingSize = try await window.getAxSize() ?? window.lastFloatingSize
+                        if window.noResize { window.noResizeNeedsInitialPlacement = true }
                         try await window.relayoutWindow(on: workspace, forceTile: true)
                         return true
                 }

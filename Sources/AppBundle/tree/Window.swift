@@ -7,6 +7,7 @@ class Window: TreeNode, Hashable {
     var lastFloatingSize: CGSize?
     var isFullscreen: Bool = false
     var noResize: Bool = false
+    var noResizeNeedsInitialPlacement: Bool = false
     var noOuterGapsInFullscreen: Bool = false
     var layoutReason: LayoutReason = .standard
 

@@ -28,7 +28,15 @@ extension TreeNode {
                 }
             case .window(let window):
                 if window.windowId != currentlyManipulatedWithMouseWindowId {
-                    if window.noResize { return }
+                    if window.noResize {
+                        if window.noResizeNeedsInitialPlacement && !window.isFullscreen {
+                            if let currentSize = window.lastFloatingSize {
+                                window.setAxFrame(point, CGSize(width: currentSize.width, height: currentSize.height))
+                            }
+                        }
+                        window.noResizeNeedsInitialPlacement = false
+                        return
+                    }
                     
                     lastAppliedLayoutVirtualRect = virtual
                     if window.isFullscreen && window == context.workspace.rootTilingContainer.mostRecentWindowRecursive {
