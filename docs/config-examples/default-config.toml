@@ -37,6 +37,10 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
 automatically-unhide-macos-hidden-apps = false
 
+# Comma separated list of apps that should manage their own size
+# Example: self-sizing-apps = 'qemu-system-aarch64, AnotherApp'
+self-sizing-apps = ''
+
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 [key-mapping]

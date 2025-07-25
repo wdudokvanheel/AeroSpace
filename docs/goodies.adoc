@@ -193,6 +193,17 @@ link:config-examples/i3-like-config-example.toml[Download i3-like-config.toml]
 include::config-examples/i3-like-config-example.toml[]
 ----
 
+[#self-sizing-apps]
+== Let some apps manage their own size
+
+If a window manages its own size, AeroSpace can avoid resizing it by listing the app name in `self-sizing-apps`.
+
+.~/.aerospace.toml
+[source,toml]
+----
+self-sizing-apps = 'qemu-system-aarch64'
+----
+
 [#popular-apps-ids]
 == List of popular and built-in applications IDs
 

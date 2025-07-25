@@ -28,6 +28,8 @@ extension TreeNode {
                 }
             case .window(let window):
                 if window.windowId != currentlyManipulatedWithMouseWindowId {
+                    if window.noResize { return }
+                    
                     lastAppliedLayoutVirtualRect = virtual
                     if window.isFullscreen && window == context.workspace.rootTilingContainer.mostRecentWindowRecursive {
                         lastAppliedLayoutPhysicalRect = nil

@@ -44,6 +44,7 @@ struct Config: ConvenienceCopyable {
     var accordionPadding: Int = 30
     var enableNormalizationOppositeOrientationForNestedContainers: Bool = true
     var execOnWorkspaceChange: [String] = [] // todo deprecate
+    var selfSizingApps: [String] = []
     var keyMapping = KeyMapping()
     var execConfig: ExecConfig = ExecConfig()
 
